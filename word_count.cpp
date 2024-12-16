@@ -6,22 +6,22 @@
 using namespace std;
 
 int countWords(const string& filename){
-    ifstream file(filename);
+    ifstream file(filename); // used to open and read files
 
-    // if file name is not in the form of .txt them output error.
+    //If the file name is not in the form of .txt then output error.
     if(!file.is_open()){
         cout << "Error opening file: " << filename << endl;
         return -1;
     }
 
-    // initialising wordCount to '0'.
+    //initializing- wordCount to '0'.
     int wordCount = 0;
     string line;
     while (getline(file, line)){
         stringstream ss(line);
         string word;
 
-        // if ss can extract word from line then loop is cotinued.
+        //If ss can extract a word from the line then the loop is continued.
         while(ss >> word){
             wordCount++;
         }
